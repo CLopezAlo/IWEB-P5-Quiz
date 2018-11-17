@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="17G65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quizzes View Controller-->
+        <scene sceneID="9h7-sI-DAN">
+            <objects>
+                <tableViewController id="lMJ-de-kVF" customClass="QuizTableViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" id="GNu-6m-pln">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Type Cell" rowHeight="113" id="vyt-EZ-IVp" customClass="QuizTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="113"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vyt-EZ-IVp" id="gR0-Jp-z4f">
+                                    <frame key="frameInset" width="375" height="112"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dih-Fv-BtD">
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vvL-xt-tG6">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="vvL-xt-tG6" secondAttribute="height" multiplier="1:1" id="dqX-IO-c9J"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OfQ-4T-6tG" userLabel="Stack Label">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhN-Om-ChV">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoV-HF-xhw">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="dih-Fv-BtD" secondAttribute="trailing" constant="10" id="7M3-JL-jp6"/>
+                                        <constraint firstItem="dih-Fv-BtD" firstAttribute="leading" secondItem="gR0-Jp-z4f" secondAttribute="leading" constant="10" id="AhF-6r-IRe"/>
+                                        <constraint firstItem="dih-Fv-BtD" firstAttribute="top" secondItem="gR0-Jp-z4f" secondAttribute="top" constant="10" id="OBP-xO-xnV"/>
+                                        <constraint firstAttribute="bottom" secondItem="dih-Fv-BtD" secondAttribute="bottom" constant="10" id="ZBY-fh-xWy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconImageView" destination="vvL-xt-tG6" id="KUj-WI-olZ"/>
+                                    <outlet property="nameAuthor" destination="MhN-Om-ChV" id="ows-1H-SL2"/>
+                                    <outlet property="nameLabel" destination="MhN-Om-ChV" id="JiV-2T-lI6"/>
+                                    <outlet property="nameQuestion" destination="RoV-HF-xhw" id="NJr-1e-sUO"/>
+                                    <outlet property="userName" destination="MhN-Om-ChV" id="yOv-9x-AUL"/>
+                                    <segue destination="JgJ-c5-8ZA" kind="show" identifier="Show Quiz" id="R6x-Rz-e5p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lMJ-de-kVF" id="g8N-Gj-wmX"/>
+                            <outlet property="delegate" destination="lMJ-de-kVF" id="H5M-p1-k9H"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Quizzes View Controller" id="nJX-6W-INy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="a4l-Gl-rSg">
+                            <connections>
+                                <action selector="getQuiz:" destination="lMJ-de-kVF" id="MJ2-5r-11Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshButton" destination="a4l-Gl-rSg" id="i4G-qr-Ova"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="le1-eg-BDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501.60000000000002" y="-183.05847076461771"/>
+        </scene>
+        <!--Answer View Controller-->
+        <scene sceneID="7tt-Pc-HGl">
+            <objects>
+                <viewController id="JgJ-c5-8ZA" customClass="AnswerViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sJa-WM-W0T"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qkd-N5-XNm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dRU-Rg-bbL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avw-NA-MEQ">
+                                <frame key="frameInset" minY="20" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="93f-Qq-7hW">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="undo" id="Bjd-iG-tgH"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Pista" id="Hhu-s5-u6a">
+                                            <connections>
+                                                <segue destination="Nhf-n1-hBK" kind="show" identifier="Show Hint" id="N5m-Ci-eQg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dC6-Ww-YJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1240.8" y="-183.05847076461771"/>
+        </scene>
+        <!--Hint View Controller-->
+        <scene sceneID="B74-ia-jXq">
+            <objects>
+                <viewController id="Nhf-n1-hBK" customClass="HintViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PPK-jx-bhO"/>
+                        <viewControllerLayoutGuide type="bottom" id="hc3-og-7Ik"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U7W-2B-Hbv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oob-FT-8VD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="-183"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bSN-fP-Nnx">
+            <objects>
+                <navigationController id="1AD-OS-DRa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="klg-tt-egf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lMJ-de-kVF" kind="relationship" relationship="rootViewController" id="WWP-If-LaW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6V4-ja-IAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-377" y="-183"/>
+        </scene>
+    </scenes>
+</document>
